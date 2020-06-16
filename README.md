@@ -1,4 +1,4 @@
-# ccl-small-cli
+# easyc
 快速构建小型项目
 
 ## 适用场景
