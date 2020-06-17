@@ -5,6 +5,9 @@
     适用于对于兼容性比较高,但是本身项目比较小型的项目,已经做了ES6和移动端css的兼容,如需别的兼容配置,可自行在 .babelrc,postcss.config.js中配置
 
 ## 使用方式 
+    npm i easyc-cli -g 安装cli
+    easyc init [project-name]
+    cd [project-name]
     npm i 初始化
     npm run dev 开发模式 
     npm run build 生产模式 
@@ -46,7 +49,6 @@
 
     2. 修改rem比例,在 ./cofig/webpack.dev.config.js   ./cofig/webpack.config.js 的 css px2rem-loader处修改  
 
-    3. 暂时就这些,想到再更
 
 
 
