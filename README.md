@@ -48,7 +48,8 @@
     1. 当前版本存在端口号冲突时,开发环境会编译失败,请自行修改 ./cofig/webpack.dev.config.js  
 
     2. 修改rem比例,在 ./cofig/webpack.dev.config.js   ./cofig/webpack.config.js 的 css px2rem-loader处修改  
-
+    
+    3. 对于1px border问题 ,这里已经内置了解决方案,正常写border脚手架就会自动转义,如果想自己处理,也可以自行修改postcss配置
 
 
 
