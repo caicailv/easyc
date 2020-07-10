@@ -43,7 +43,6 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "lib-flexible": "^0.3.2",
-    "postcss-border-1px": "^1.0.2"
+    "lib-flexible": "^0.3.2"
   }
 }

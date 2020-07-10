@@ -1,19 +1,10 @@
 // postcss.config.js
-const autoprefixer = require('autoprefixer');
-const postCss1px = require('postcss-border-1px');
+const autoprefixer = require('autoprefixer')
 module.exports = {
-  plugins: [autoprefixer({
-    overrideBrowserslist: [
-      "Android 4.1",
-      "iOS 7.1",
-    ],
-    grid: true
-  }),
-    postCss1px
+  plugins: [
+    autoprefixer({
+      overrideBrowserslist: ['Android 4.1', 'iOS 7.1'],
+      grid: true,
+    }),
   ],
-  // 'postcss-pxtorem': {
-  //   rootValue: 100,
-  //   propList: ['*']
-  // }
-
-};
+}
