@@ -60,10 +60,6 @@ module.exports = e.plugin(
                       (e, t, o) => `${2 * parseFloat(t)}${o}`
                     ),
                     o = e.clone({ value: t })
-                  console.log('jjj')
-
-                  console.log(o)
-                  console.log('jjj')
                   c.borderRadius.push(o)
                 }
               }

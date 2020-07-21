@@ -155,7 +155,7 @@ del {
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted #000;
+  border-bottom: 1Px dotted #000;
   cursor: help;
 }
 
@@ -164,14 +164,6 @@ table {
   border-spacing: 0;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
-  padding: 0;
-}
 
 input,
 select {
@@ -197,19 +189,18 @@ div {
 img {
   display: block;
 }
-
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 321Px) {
   body {
-    font-size: 12px;
+    font-size: 12Px;
   }
 }
-@media screen and (min-width: 321px) and (max-width: 400px) {
+@media screen and (min-width: 321Px) and (max-width: 400Px) {
   body {
-    font-size: 14px;
+    font-size: 14Px;
   }
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 400Px) {
   body {
-    font-size: 16px;
+    font-size: 16Px;
   }
 }
