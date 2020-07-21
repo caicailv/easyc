@@ -11,6 +11,8 @@
     npm i 初始化
     npm run dev 开发模式 
     npm run build 生产模式 
+    
+    如果你不想全局安装, 也可以直接clone本项目到本地直接使用
 
 ## 目录结构
 

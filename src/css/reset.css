@@ -189,6 +189,7 @@ textarea {
 div {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  cursor:pointer;
 }
 .pointer{
   cursor: pointer;
