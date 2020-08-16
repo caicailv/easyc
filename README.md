@@ -1,5 +1,21 @@
 # easyc
-快速构建小型项目
+快速构建活动页
+
+
+## 什么东西可以用这个脚手架来写?
+    easyc适用于简单的一次性页面(移动端,PC端活动),对兼容要求比较高,本身比较简单,不太合适用大型框架来构建的项目.
+
+## 我能帮你做什么?  
+
+    es6转义  
+    开发模式热更新
+    生成模式一键打包
+    手机热更新调试
+    内置SCSS,自动兼容性CSS
+    重复代码封装,一键生成基本架构
+    支持jq,layui等小型库
+    内置移动端适配方案
+    内置toast,弹框等
 
 ## 适用场景
     适用于对于兼容性比较高,但是本身项目比较小型的项目,已经做了ES6和移动端css的兼容,如需别的兼容配置,可自行在 .babelrc,postcss.config.js中配置
@@ -19,19 +35,18 @@
 - config webpack配置文件
 - dist 打包后的项目
 - src 代码放置文件
-    - html html存放位置
     - img 图片位置
     - js js代码存放位置
     - css css,scss代码存放位置
         - _common.scss 公用样式,函数存放空间
     - main.js 入口文件 
-
+    - index.html html文件
 ## html引入  
     无需手动引入任何文件, 需要引入图片直接引入即可
 
 ### 图片引入
     直接引入即可
-     <img src="../img/xx.jpg />  
+     <img src="./img/xx.jpg />  
 
 ### css.scss引入 
     在main.js中引入,无需html中引入,但是每一个html页面最好用一个class来包裹住其余样式, 否则会有命名冲突问题
@@ -47,11 +62,11 @@
     window.$ = $;
 ```
 ## 注意事项:
-    1. 当前版本存在端口号冲突时,开发环境会编译失败,请自行修改 ./cofig/webpack.dev.config.js  
 
-    2. 修改rem比例,在 ./cofig/webpack.dev.config.js   ./cofig/webpack.config.js 的 css px2rem-loader处修改  
+    1. 修改rem比例,或者使用其他单位,在 ./cofig/webpack.dev.config.js   ./cofig/webpack.config.js 的 css px2rem-loader处修改
     
-    3. 对于1px border问题 ,这里已经内置了解决方案,正常写border脚手架就会自动转义,如果想自己处理,也可以自行修改postcss配置
+    2. 对于1px border问题 ,这里已经内置了解决方案,正常写border脚手架就会自动转义,如果想自己处理,也可以自行修改postcss配置,需要注意的是,本脚手架处理的方案是通过伪元素进行放缩,如果伪元素已经用了, 那最好包裹一层div或采用其他方案
+
 
 
 
