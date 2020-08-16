@@ -5,20 +5,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 let htmlEntry = [];
-let srcResources = fs.readdirSync(path.resolve(__dirname, "..", 'src/html'));
-for (let el of srcResources) {
-    if (el.includes('.html')) {
-        htmlEntry.push(
-            new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, "..", `src/html/${el}`),//模板文件，即需要打包和拷贝到build目录下的html文件
-                filename: el,//目标html文件
-                minify: false,
-                inject: 'head'
-            }));
-    }
+let srcResources = fs.readdirSync(path.resolve(__dirname, '..', 'src'))
+for (let html of srcResources) {
+  if (html.includes('.html')) {
+    htmlEntry.push(
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '..', `src/${html}`), //模板文件，即需要打包和拷贝到build目录下的html文件
+        filename: html, //目标html文件
+        inject: 'head',
+      })
+    )
+  }
 }
-
-
 module.exports = {
     mode: 'production',// development 开发  production 生产
     entry: {
