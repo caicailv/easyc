@@ -1,16 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1.0,maixmum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maixmum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+    />
     <title></title>
-</head>
+  </head>
 
-<body class="index">
-    <p>使用webpack快速搭建移动端简易H5项目</p>
-    <img src="./../img/caicailv.png" alt="">
-</body>
+  <body class="page_index">
+    <div class="popup" id="active_end">
+      <div class="active">
+        <div class="title">温馨提示</div>
+        <div class="content">活动已结束活动已结束活动已结束活动已结束</div>
+      </div>
+    </div>
 
+    <div class="popup" id="login">
+      <div class="popup_row">
+        <div class="off" onclick="offPop('login')">
+          <img src="../img/off.png" alt="" />
+        </div>
+        <div class="containers">
+          <div class="login_title">
+            登录后才能参与活动哦！
+          </div>
+          <div class="list" id="phone_list">
+            <div class="int">
+              <input
+                type="number"
+                maxlength="11"
+                value=""
+                placeholder="请输入上海移动手机号码"
+              />
+            </div>
+            <p></p>
+          </div>
+          <div class="list" id="yzmimg_list">
+            <div class="int_row">
+              <div class="int">
+                <input
+                  type="number"
+                  maxlength="11"
+                  placeholder="请输入图形验证码"
+                />
+              </div>
+              <div class="yzm_img">
+                <img src="../img/yzm.png" alt="" />
+              </div>
+            </div>
+            <p></p>
+          </div>
+          <div class="list" id="yzmphone_list">
+            <div class="int_row">
+              <div class="int">
+                <input
+                  type="number"
+                  maxlength="11"
+                  placeholder="请输入手机验证码"
+                />
+              </div>
+              <div id="yzm_btn" class="yzm_btn">获取验证码</div>
+            </div>
+            <p></p>
+          </div>
+          <div class="login_btn" id="submit">登录</div>
+          <p class="tipp">*仅限上海移动号码</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function openPop(id) {
+        $('#' + id).addClass('show')
+      }
+      function offPop(id) {
+        $('#' + id).removeClass('show')
+      }
+    </script>
+    <script>
+      //   登录
+      $('#submit').click(function () {
+        var formData = {
+          phone: $('#phone_list input').val(),
+          imgYzm: $('#yzmimg_list input').val(),
+          phoneYzm: $('#yzmphone_list input').val(),
+        }
+        if (formData.phone.length !== 11) {
+          return $('#phone_list p').text('输入有误,不是上海移动手机号码')
+        } else {
+          $('#phone_list p').text('')
+        }
+        /*
+                // 验证图形验证码是否正确
+        if (formData.imgYzm) {
+          return $('#yzmimg_list p').text('输入有误,重新输入')
+        } else {
+          $('#yzmimg_list p').text('')
+        }
+        // 验证短信验证码是否正确
+        if (formData.imgYzm) {
+          return $('#yzmphone_list p').text('输入有误,重新输入')
+        } else {
+          $('#yzmphone_list p').text('')
+        }
+        */
+        console.log(formData)
+      })
+      function getYzm() {
+        var phone = $('#phone_list input').val()
+        if (phone.length !== 11) {
+          return $('#phone_list p').text('输入有误,不是上海移动手机号码')
+        } else {
+          $('#phone_list p').text('')
+        }
+        // 发送验证码请求
+        $(this).unbind('click')
+        var time = 60
+        var that = this
+        $(that).html(time)
+        var timer = setInterval(function () {
+          if (time <= 0) {
+            $(that).html('获取验证码')
+            $(that).click(getYzm)
+          } else {
+            time--
+            $(that).html(time)
+          }
+        }, 1000)
+      }
+      $('#yzm_btn').click(getYzm)
+    </script>
+  </body>
 </html>
