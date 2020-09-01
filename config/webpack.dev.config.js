@@ -4,12 +4,14 @@ let portfinder = require('portfinder')
 let HtmlWebpackPlugin = require('html-webpack-plugin') //配置所有html文件可热更新而不是只有根目录下的index才可以
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 let htmlPugins = []
+let htmlNames = []
 let srcResources = fs.readdirSync(path.resolve(__dirname, '..', 'src'))
 for (let html of srcResources) {
   if (html.includes('.html')) {
+    htmlNames.push(html)
     htmlPugins.push(
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, '..', `src/${html}`), //模板文件，即需要打包和拷贝到build目录下的html文件
+        template: path.resolve(__dirname, '..', `src/${html}`),
         filename: html, //目标html文件
         inject: 'head',
       })
@@ -107,9 +109,9 @@ module.exports = new Promise((resolve, reject) => {
         config.plugins.push(
           new FriendlyErrorsWebpackPlugin({
             compilationSuccessInfo: {
-              messages: [
-                `http://localhost:${port} 或 http://${getIPAdress()}:${port}`,
-              ],
+              messages: htmlNames.map((el) => {
+                return `http://localhost:${port}/${el} 或 http://${getIPAdress()}:${port}/${el}`
+              }),
             },
           })
         )

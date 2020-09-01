@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from './jquery'
 var st_timer = null
 $(function () {
   showInit()
