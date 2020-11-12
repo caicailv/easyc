@@ -1,7 +1,7 @@
 let path = require('path')
 let fs = require('fs')
 let portfinder = require('portfinder')
-let HtmlWebpackPlugin = require('html-webpack-plugin') //配置所有html文件可热更新而不是只有根目录下的index才可以
+let HtmlWebpackPlugin = require('html-webpack-plugin') //
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 let htmlPugins = []
 let htmlNames = []
