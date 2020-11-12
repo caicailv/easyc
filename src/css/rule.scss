@@ -1,0 +1,152 @@
+
+.page_rule {
+  background-color: #4b4ec4;
+
+  padding-bottom: 40px;
+  .back {
+    z-index: 3;
+    left: -25px;
+    bottom: 100px;
+    font-size: 30px;
+    color: #04091c;
+    border: 1Px solid #04091c;
+    border-radius: 30px;
+    background-color: #dbe4eb;
+    background-color: #dbe4eb;
+    padding: 10px 30px;
+    padding-left: 40px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+  .head {
+    // background-image: url("../img/rule_head.png");
+    width: 100%;
+    height: 809px;
+    background-size: 100% 100%;
+    margin-bottom: -410px;
+  }
+  .thead {
+    position: relative;
+    height: 100px;
+    .iconleft1 {
+      top: 26px;
+      left: 20px;
+      position: absolute;
+      width: 197px;
+      right: 47px;
+      z-index: 3;
+    }
+    .iconright2 {
+      top: 34px;
+      right: 10px;
+      position: absolute;
+      width: 115px;
+      right: 51px;
+      z-index: 3;
+    }
+  }
+
+  .list {
+    margin: 68px auto 0;
+    background: #fff6eb;
+    border-radius: 20px;
+    padding: 0 36px 46px;
+    position: relative;
+
+    width: 694px;
+    background: #ffffff;
+    border: 10px solid #a1a5ee;
+    box-shadow: 0px 11px 13px 0px rgba(0, 0, 0, 0.26);
+    border-radius: 20px;
+
+    .title {
+      width: 476px;
+      height: 83px;
+      margin: -34px auto;
+      // background-image: url("../img/rule_title.png");
+      background-size: 100% 100%;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 36px;
+      padding-top: 20px;
+
+      font-size: 30px;
+      font-family: PingFang;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 27px;
+      text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.32);
+    }
+    .explain {
+      .row {
+        display: flex;
+        margin-top: 30px;
+        .left1 {
+          width: 49px;
+          height: 49px;
+        }
+        .left2 {
+          width: 49px;
+          height: 48px;
+        }
+        .right {
+          margin-left: 33px;
+          .tit {
+            font-size: 36px;
+            font-family: SourceHanSansCN;
+            font-weight: bold;
+            color: #4b4ec4;
+            margin-bottom: 10px;
+          }
+          .text {
+            font-size: 24px;
+            font-family: SourceHanSansCN;
+            font-weight: 500;
+            color: #323232;
+            line-height: 34px;
+            &.timetext {
+              color: #ed6856;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      font-size: 24px;
+      font-family: PingFang;
+      font-weight: 500;
+      color: #232323;
+      line-height: 33px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // .adv_row_space {
+  //   height: 200px;
+  // }
+  // .adv_row {
+  //   background-color: #fff7e1;
+  //   margin-top: auto;
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 2;
+  //   .adv {
+  //     width: 693px;
+  //     height: 150px;
+  //     margin: 20px auto;
+  //     border-radius: 10px;
+  //     img {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
+}

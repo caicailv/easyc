@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1.0,maixmum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+      content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, width=device-width"
     />
+    <meta name="screen-orientation" content="portrait" />
     <title></title>
   </head>
 
@@ -23,7 +25,7 @@
                 type="number"
                 maxlength="11"
                 value=""
-                placeholder="请输入上海移动手机号码"
+                placeholder="请输入cccc手机号码"
               />
             </div>
             <p></p>
@@ -57,15 +59,11 @@
             <p></p>
           </div>
           <div class="login_btn" id="submit">登录</div>
-          <p class="tipp">*仅限上海移动号码</p>
+          <p class="tipp">*仅限cccc号码</p>
         </div>
       </div>
     </div>
     <script>
-      
-
-
-
       popup({
         content:
           '没有抽奖次数啦 <br />分享好友可额外<span class="red">获得1次抽奖机会哦</span>',
@@ -96,7 +94,7 @@
           phoneYzm: $('#yzmphone_list input').val(),
         }
         if (formData.phone.length !== 11) {
-          return $('#phone_list p').text('输入有误,不是上海移动手机号码')
+          return $('#phone_list p').text('输入有误,不是cccc手机号码')
         } else {
           $('#phone_list p').text('')
         }
@@ -117,7 +115,7 @@
       function getYzm() {
         var phone = $('#phone_list input').val()
         if (phone.length !== 11) {
-          return $('#phone_list p').text('输入有误,不是上海移动手机号码')
+          return $('#phone_list p').text('输入有误,不是cccc手机号码')
         } else {
           $('#phone_list p').text('')
         }
