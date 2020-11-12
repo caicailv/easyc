@@ -10,22 +10,13 @@
   </head>
 
   <body class="page_index">
-    <div class="popup" id="active_end">
-      <div class="active">
-        <div class="title">温馨提示</div>
-        <div class="content">活动已结束活动已结束活动已结束活动已结束</div>
-      </div>
-    </div>
-
     <div class="popup" id="login">
-      <div class="popup_row">
-        <div class="off" onclick="offPop('login')">
+      <div class="login_row">
+        <div class="off">
           <img src="img/off.png" alt="" />
         </div>
         <div class="containers">
-          <div class="login_title">
-            登录后才能参与活动哦！
-          </div>
+          <div class="login_title">登录后才能参与活动哦！</div>
           <div class="list" id="phone_list">
             <div class="int">
               <input
@@ -71,14 +62,32 @@
       </div>
     </div>
     <script>
-      function openPop(id) {
-        $('#' + id).addClass('show')
-      }
-      function offPop(id) {
-        $('#' + id).removeClass('show')
-      }
-    </script>
-    <script>
+      
+
+
+
+      popup({
+        content:
+          '没有抽奖次数啦 <br />分享好友可额外<span class="red">获得1次抽奖机会哦</span>',
+        offShow: true,
+        confirmText: '呼叫小伙伴',
+        confirmCallback: function () {
+          console.log('confirmCallback')
+        },
+      })
+      /* 
+            popup({
+        content:
+          '没有抽奖次数啦 <br />分享好友可额外<span class="red">获得1次抽奖机会哦</span>',
+        offShow: true,
+        confirmText: '呼叫小伙伴',
+        confirmCallback: function () {
+          console.log('confirmCallback')
+        },
+      })
+
+      */
+      // $('#login').addClass('show')
       //   登录
       $('#submit').click(function () {
         var formData = {
@@ -91,8 +100,7 @@
         } else {
           $('#phone_list p').text('')
         }
-        /*
-                // 验证图形验证码是否正确
+        // 验证图形验证码是否正确
         if (formData.imgYzm) {
           return $('#yzmimg_list p').text('输入有误,重新输入')
         } else {
@@ -104,7 +112,6 @@
         } else {
           $('#yzmphone_list p').text('')
         }
-        */
         console.log(formData)
       })
       function getYzm() {
