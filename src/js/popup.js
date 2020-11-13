@@ -46,7 +46,7 @@ export default function popup({
         </div>`
             : ''
         }
-        ${confirmText!=="" ? `<div class="fot_btn">${confirmText}</div>` : ''}
+        ${confirmText !== '' ? `<div class="fot_btn">${confirmText}</div>` : ''}
         ${tips ? `<div class="p_tips">${tips}</div>` : ''}
       </div>
     </div>

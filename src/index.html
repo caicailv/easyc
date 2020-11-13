@@ -12,6 +12,7 @@
   </head>
 
   <body class="page_index">
+    <div class="rule">活动规则</div>
     <div class="popup" id="login">
       <div class="login_row">
         <div class="off">
@@ -64,19 +65,13 @@
       </div>
     </div>
     <script>
-      popup({
-        content:
-          '没有抽奖次数啦 <br />分享好友可额外<span class="red">获得1次抽奖机会哦</span>',
-        offShow: true,
-        confirmText: '呼叫小伙伴',
-        confirmCallback: function () {
-          console.log('confirmCallback')
-        },
+      $('.rule').click(function () {
+        location.href = './rule.html'
       })
       /* 
             popup({
         content:
-          '没有抽奖次数啦 <br />分享好友可额外<span class="red">获得1次抽奖机会哦</span>',
+          '这是弹窗内容',
         offShow: true,
         confirmText: '呼叫小伙伴',
         confirmCallback: function () {
