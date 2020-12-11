@@ -68,7 +68,7 @@ function showToast(obj) {
 function closeMask() {
   $('#st_mask,#st_alertBox,#st_confirmBox').hide()
 }
-function toast(msg) {
+export function toast(msg) {
   $(function () {
     showToast({
       text: msg,
@@ -79,4 +79,31 @@ function toast(msg) {
     })
   })
 }
-export default toast
+
+
+export function loadingShow(text='加载中') {
+  let html = `
+  <div class="loade_com">
+  <div class="loading_box">
+  <div class="loader">
+    <div class="loader-inner ball-spin-fade-loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <p class="fuh">${text}……</p>
+</div>
+  </div>
+  `
+  $('body').append(html)
+}
+
+export function loadingHide() {
+  $('.loade_com').remove()
+}
