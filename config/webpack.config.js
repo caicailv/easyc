@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 let htmlEntry = []
 let srcResources = fs.readdirSync(path.resolve(__dirname, '..', 'src'))
 for (let html of srcResources) {
@@ -21,6 +22,9 @@ for (let html of srcResources) {
   }
 }
 module.exports = {
+  performance: {
+    hints: false,
+  },
   mode: 'production', // development 开发  production 生产
   entry: {
     main: './src/main.js',
@@ -93,6 +97,14 @@ module.exports = {
     }),
     ...htmlEntry,
 
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../src/img'), //打包的静态资源目录地址
+          to: path.resolve(__dirname, '../dist/img'), //打包到dist下面的public
+        },
+      ],
+    }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         message: [path.resolve(__dirname, '..', 'dist')],
