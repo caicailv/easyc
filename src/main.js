@@ -7,12 +7,13 @@ import '@/css/loading.scss' //弹窗样式
 import $ from './js/jquery' //使用插件
 import popup from './js/popup'
 import { loadingShow, loadingHide,toast } from './js/showText'
-// import VConsole from 'vConsole'
+// import eruda from 'eruda'
 window.$ = $
 window.toast = toast
 window.loadingShow = loadingShow //开启loading
 window.loadingHide = loadingHide //关闭loading
 window.popup = popup
 
+
 // 如果需要移动端调试
-// var vConsole = new VConsole() 
+// eruda.init()

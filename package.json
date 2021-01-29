@@ -42,7 +42,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "lib-flexible": "^0.3.2",
-    "vconsole": "^3.3.4"
+    "eruda": "^2.4.1",
+    "lib-flexible": "^0.3.2"
   }
 }
