@@ -21,6 +21,22 @@ for (let html of srcResources) {
     )
   }
 }
+
+// 直接使用copywebpackplugin会在img目录为空时,抛出无法打包的错误,这里先判断是否有图片,再决定是否使用该插件
+let copyWebpackPlugins = []
+const imgs = fs.readdirSync(path.resolve(__dirname, '..', 'src/img'))
+if (imgs.length !== 0) {
+  copyWebpackPlugins.push(
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../src/img'), //打包的静态资源目录地址
+          to: path.resolve(__dirname, '../dist/img'), //打包到dist下面的public
+        },
+      ],
+    })
+  )
+}
 module.exports = {
   performance: {
     hints: false,
@@ -96,15 +112,7 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     ...htmlEntry,
-
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, '../src/img'), //打包的静态资源目录地址
-          to: path.resolve(__dirname, '../dist/img'), //打包到dist下面的public
-        },
-      ],
-    }),
+    ...copyWebpackPlugins,
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         message: [path.resolve(__dirname, '..', 'dist')],
