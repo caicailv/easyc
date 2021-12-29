@@ -1,7 +1,6 @@
 import './js/flexible' //屏幕适配
 import './css/reset.css' //基础样式
 import '@/css/index.scss' //页面样式
-import '@/css/rule.scss' //页面样式
 import '@/css/popup.scss' //弹窗样式
 import '@/css/loading.scss' //弹窗样式
 import $ from './js/jquery' //使用插件

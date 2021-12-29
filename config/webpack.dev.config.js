@@ -87,7 +87,12 @@ let config = {
             },
           },
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('dart-sass'),
+            },
+          },
         ],
       },
     ],
