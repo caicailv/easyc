@@ -38,10 +38,10 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "dart-sass": "^1.25.0",
   },
   "dependencies": {
-    "dart-sass": "^1.25.0",
     "eruda": "^2.4.1",
     "lib-flexible": "^0.3.2"
   }
